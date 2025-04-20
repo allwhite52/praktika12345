@@ -1,0 +1,93 @@
+﻿<Window x:Class="praktika12345.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:praktika12345"
+        mc:Ignorable="d"
+            Title="Главное окно" Height="550" Width="1120" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="Языки" Margin="-2,-2,0,-59">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="10,10,0,10" Width="484">
+                        <Button x:Name="AddButtonLanguages" Content="Добавить" Click="AddButtonLanguages_Click" 
+                        Width="100" Height="30" Margin="5" />
+                        <Button x:Name="EditButtonLanguages" Content="Редактировать" Click="EditButtonLanguages_Click" 
+                        Width="100" Height="30" Margin="5" />
+                        <Button x:Name="DeleteButtonLanguages" Content="Удалить" Click="DeleteButtonLanguages_Click" 
+                        Width="100" Height="30" Margin="5" />
+                    </StackPanel>
+                    <ListView x:Name="LanguageView" d:ItemsSource="{d:SampleData ItemCount=0}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Код языка" DisplayMemberBinding="{Binding LanguageId}" Width="200"/>
+                                <GridViewColumn Header="Название языка" DisplayMemberBinding="{Binding LanguageName}" Width="200"/>
+                                <GridViewColumn Header="Группа языка" DisplayMemberBinding="{Binding LanguageGroup}" Width="200"/>
+                                <GridViewColumn Header="Языкова система" DisplayMemberBinding="{Binding LanguageSystem}" Width="200"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Страны" Margin="-3,59,0,-129">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="0,10,0,10" Width="502">
+                        <Button x:Name="AddButtonCountries" Content="Добавить" Click="AddButtonCountries_Click" 
+                        Width="100" Height="30" Margin="5" />
+                        <Button x:Name="EditButtonCountries" Content="Редактировать" Click="EditButtonCountries_Click" 
+                        Width="100" Height="30" Margin="5" />
+                        <Button x:Name="DeleteButtonCountries" Content="Удалить" Click="DeleteButtonCountries_Click" 
+                        Width="100" Height="30" Margin="5" />
+                    </StackPanel>
+                    <ListView x:Name="CountryView" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="0,0,0,10">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Код страны" DisplayMemberBinding="{Binding CountryId}" Width="130"/>
+                                <GridViewColumn Header="Название страны" DisplayMemberBinding="{Binding CountryName}" Width="130"/>
+                                <GridViewColumn Header="Столица" DisplayMemberBinding="{Binding Capital}" Width="180"/>
+                                <GridViewColumn Header="Континент" DisplayMemberBinding="{Binding Continent}" Width="250"/>
+                                <GridViewColumn Header="Численность" DisplayMemberBinding="{Binding Populations}" Width="250"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Составы" Margin="-3,129,1,-195">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="0,10,0,10" Width="502">
+                        <Button x:Name="AddButtonSquads" Content="Добавить" Click="AddButtonSquads_Click" 
+        Width="100" Height="30" Margin="5" />
+                        <Button x:Name="EditButtonSquads" Content="Редактировать" Click="EditButtonSquads_Click" 
+        Width="100" Height="30" Margin="5" />
+                        <Button x:Name="DeleteButtonSquads" Content="Удалить" Click="DeleteButtonSquads_Click" 
+        Width="100" Height="30" Margin="5" />
+                    </StackPanel>
+                    <ListView x:Name="SquadsView" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="0,0,0,10">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Код состава" DisplayMemberBinding="{Binding SquadsId}" Width="130"/>
+                                <GridViewColumn Header="Код страны" DisplayMemberBinding="{Binding CountryId}" Width="130"/>
+                                <GridViewColumn Header="Код языка" DisplayMemberBinding="{Binding LanguageId}" Width="180"/>
+                                <GridViewColumn Header="Кол-во говорящих" DisplayMemberBinding="{Binding SpeakersCount}" Width="250"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

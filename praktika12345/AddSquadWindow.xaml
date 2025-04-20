@@ -1,0 +1,23 @@
+﻿<Window x:Class="praktika12345.AddSquadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:praktika12345"
+        mc:Ignorable="d"
+            Title="2" Height="280" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Код страны" Margin="0,10,0,0"/>
+            <TextBox x:Name="CountryIdSquadBox"/>
+
+            <TextBlock Text="Код языка" Margin="0,10,0,0" />
+            <TextBox x:Name="LanguageIdSquadBox" />
+
+            <TextBlock Text="Кол-во говорящих людей" Margin="0,10,0,0" />
+            <TextBox x:Name="SpeakersCountSquadBox"/>
+
+            <Button x:Name="SaveButton" Content="Сохранить" Click="SaveButton_Click" Margin="0,20,0,0" />
+        </StackPanel>
+    </Grid>
+</Window>
